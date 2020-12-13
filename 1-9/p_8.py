@@ -35,29 +35,26 @@ while start <= roof:
     # slice numbers in length 13
     end = start + length
     string = numberstring[start:end:1]
+
     # if number contains 0, drop
-    drop = False
-    for n in string:
-        if(n == '0'):
-            drop = True
-    if(not drop):
+    if '0' not in string:
         numbers.append(string)
+
     start+=1
 
 #find the number that gives the highest value
-
 winner = -1
 winnervalue = -1
 for string in numbers:
-    value = 1
-    for s in string:
-        n = int(s)
-        value*=n
-
-    if (value > winnervalue):
+    # calculate product
+    product = 1
+    values = [int(x) for x in string]
+    for v in values: product*=v
+    # check if new val is better
+    if (product > winnervalue):
         winner = string
-        winnervalue = value
+        winnervalue = product
 
-print("----------\n----------")
-print("Winner:" + winner)
+# print result
+print("Winner: " + winner)
 print("Value: " + str(winnervalue))

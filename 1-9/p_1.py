@@ -8,6 +8,7 @@ i = 1
 limit = 1000
 sum = 0
 while i < limit:
+    # add number if it is divisible by 3 or 5
     if((i % 3 == 0) or (i % 5 == 0)):
         sum+=i
     i+=1

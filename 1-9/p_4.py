@@ -3,19 +3,25 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 '''
-# FIXME: Obviously this should start at the highest value and work its way down...
-max = 1000
-f1 = 100
-f2 = 100
-palindromic = -1
-while f2 < max:
-    f1=100
-    while f1 < max:
+
+min = 100
+f1 = 1000
+f2 = 1000
+palindromic = -1 # all positive numbers are greater than -1
+while f2 > min:
+    f1=1000
+    found = False
+    while f1 > min and not found:
+        # convert product to string
         n = str(f1*f2)
+        # reverse the string
         nr = n[::-1]
+        # check if palindromic
         if(n == nr and int(n) > int(palindromic)):
             palindromic = n
-        f1+=1
-    f2+=1
+            # this is the greatest palindrome with current f1
+            found = True
+        f1-=1
+    f2-=1
 
 print(palindromic)

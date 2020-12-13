@@ -9,21 +9,12 @@ Hence the difference between the sum of the squares of the first ten natural num
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 '''
+# using some borrowed formulas we find the values
+#sum of squared natural numbers
+n = 100
+s1 = n*(n+1)*(2*n+1)/6
 
-limit = 100
-#sum natural numbers squared
-i = 0
-s1 = 0
-while i <=limit:
-    s1+=i**2
-    i+=1
 #sum of the natural numbers sum, squared
-s2=0
-i = 0
-while i <= limit:
-    s2+=i
-    i+=1
-s2 = s2**2
-
-diff = s2-s1
-print(diff)
+s2 = (n*(n+1)/2)**2
+# print the difference
+print(s2-s1)
