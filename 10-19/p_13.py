@@ -104,11 +104,6 @@ txt = '''37107287533902102798797998220837590246510135740250
 
 
 arr = txt.split('\n')
-# sum the numbers together
-sum = 0
-for num in arr:
-    sum+=int(num)
-
-# print the first ten numbers
-sum = str(sum)
-print(sum[0:10])
+# sum the array and pick the first ten numbers
+firstTen = str(sum([int(x) for x in arr]))[0:10]
+print(firstTen)

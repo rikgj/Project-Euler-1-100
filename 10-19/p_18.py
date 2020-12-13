@@ -40,8 +40,6 @@ for index_l, list in enumerate(oldarr):
         val = int(val)
         arr[index_l].append(val)
 
-# for list in arr:
-#     print("list -- {} -- length {}".format(list,len(list)))
 
 # compare two values and return result
 def compare(val0, val1):
