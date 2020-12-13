@@ -9,14 +9,9 @@ So, COLIN would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
 '''
 f = open('p_22_names.txt', 'r')
-txt = f.read()
 
-# make string to a working array
-oldarr = txt.split(',')
-arr = []
-for name in oldarr:
-    name=name[1:-1]
-    arr.append(name)
+# make string to a working array and remove quotation marks " from names
+arr = [name.strip('"') for name in  f.read().split(',')]
 
 # table containing the a-z values
 az_table = {

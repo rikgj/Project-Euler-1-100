@@ -25,10 +25,11 @@ a = 1
 b = 1
 c = a+b
 i = 3
+# run the Fibonacci sequence until a number has 1000 digits
 while len(str(c))<1000:
     a = b
     b = c
     c = a+b
     i+=1
 
-print("index {} \nnumber:\n{}".format(i,c))
+print("number:\n{}\n\nindex {} \n".format(c,i))

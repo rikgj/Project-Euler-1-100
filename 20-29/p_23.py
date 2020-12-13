@@ -12,13 +12,13 @@ as the sum of two abundant numbers is less than this limit.
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 '''
 
-import math
+from math import sqrt
 
 def sum_of_all_divisors(num):
     '''return the sum of all proper divisors less than n'''
     sum_divs = 0
     divisor = 1
-    while divisor <= math.sqrt(num):
+    while divisor <= sqrt(num):
         if(num%divisor == 0):
             sum_divs+=divisor
             if(divisor != num/divisor):

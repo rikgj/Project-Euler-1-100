@@ -10,13 +10,13 @@ d(284) = 220.
 
 Evaluate the sum of all the amicable numbers under 10000.
 '''
-import math
 
+from math import sqrt
 def sum_of_all_divisors(num):
     '''return the sum of all proper divisors less than n'''
     sum_divs = 0
     divisor = 1
-    while divisor <= math.sqrt(num):
+    while divisor <= sqrt(num):
         if(num%divisor == 0):
             sum_divs+=divisor
             if(divisor != num/divisor):
@@ -36,15 +36,13 @@ num = 1
 while num < 10000:
     # check if amicable
     pot_amicable = sum_of_all_divisors(num)
-
+    # validate number
     if (sum_of_all_divisors(pot_amicable) == num and pot_amicable != num):
         # add to cart if not alreaddy present
         if num not in amicables:
             amicables.append(pot_amicable)
             amicables.append(num)
-
     num+=1
-
 
 # Evaluate the sum of all the amicable numbers under 10 000
 sum = 0
