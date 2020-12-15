@@ -1,6 +1,6 @@
 import math
 
-limit = 2000
+limit = 10**8
 list = [True] * (limit+1)
 i = 2
 limit_i = math.floor(math.sqrt(limit))
@@ -16,14 +16,9 @@ while i <= limit_i:
 
 index = 2
 
-primes = []
-
-while index < limit:
-    if(list[index]):
-        primes.append(index)
-    index+=1
-
 
 with open('primes.txt', 'w') as f:
-    for prime in primes:
-        print(prime, file=f)
+    while index < limit:
+        if(list[index]):
+            print(index, file=f)
+        index+=1
