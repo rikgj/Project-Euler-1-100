@@ -1,9 +1,9 @@
-import math
+from math import floor, sqrt
 
 limit = 10**8
 list = [True] * (limit+1)
 i = 2
-limit_i = math.floor(math.sqrt(limit))
+limit_i = floor(sqrt(limit))
 while i <= limit_i:
     if(list[i]):
         n=0
@@ -13,9 +13,7 @@ while i <= limit_i:
             n+=1
             j = i**2 + i*n
     i+=1
-
 index = 2
-
 
 with open('primes.txt', 'w') as f:
     while index < limit:
